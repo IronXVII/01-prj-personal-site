@@ -1,1 +1,75 @@
-/* Add you CSS here */
+/*
+	This CSS creates a dark, tech-inspired theme with smooth transitions and easy-to-read text.
+	Comments are included to help you learn!
+*/
+
+/* Set up the dark background and readable text */
+body {
+	background: #181a20; /* dark background */
+	color: #e0e0e0;     /* light text for readability */
+	font-family: 'Segoe UI', 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	transition: background 0.5s, color 0.5s; /* smooth transition for theme changes */
+}
+
+/* Center the main container and add padding */
+.container {
+	max-width: 800px;
+	margin: 40px auto;
+	background: #22232b;
+	border-radius: 12px;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.7);
+	padding: 32px;
+	transition: box-shadow 0.3s;
+}
+
+/* Header styles */
+header {
+	text-align: center;
+	margin-bottom: 32px;
+}
+h1 {
+	font-size: 2.5em;
+	color: #00ffe7; /* tech-inspired accent color */
+	letter-spacing: 2px;
+	margin-bottom: 8px;
+	transition: color 0.3s;
+}
+.subtitle {
+	color: #a0a0a0;
+	font-size: 1.2em;
+}
+
+/* Section styles */
+section {
+	margin-bottom: 32px;
+	padding: 16px;
+	background: #23263a;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+	transition: background 0.3s;
+}
+h2 {
+	color: #00bfff;
+	margin-top: 0;
+}
+ul {
+	padding-left: 20px;
+}
+li {
+	margin-bottom: 8px;
+}
+
+/* Footer styles */
+footer {
+	text-align: center;
+	color: #888;
+	margin-top: 32px;
+	font-size: 0.9em;
+}
+
+/* Add a hover effect for sections */
+section:hover {
+	background: #2a2d3e;
+}
