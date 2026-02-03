@@ -4,17 +4,33 @@
   <meta charset="UTF-8">
   <title>My Personal Site</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Add simple JavaScript for nav bar highlighting -->
+  <!-- Add JavaScript for animated tab switching -->
   <script>
-    // This script highlights the active tab in the navigation bar
+    // This script switches visible sections and animates transitions
     document.addEventListener('DOMContentLoaded', function() {
       const links = document.querySelectorAll('.navbar a');
+      const sections = {
+        home: document.getElementById('home-section'),
+        projects: document.getElementById('projects-section'),
+        contact: document.getElementById('contact-section')
+      };
+      function showSection(tab) {
+        Object.keys(sections).forEach(key => {
+          sections[key].classList.remove('visible');
+        });
+        sections[tab].classList.add('visible');
+      }
       links.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
           links.forEach(l => l.classList.remove('active'));
           this.classList.add('active');
+          const tab = this.getAttribute('data-tab');
+          showSection(tab);
         });
       });
+      // Show home by default
+      showSection('home');
     });
   </script>
 </head>
@@ -50,38 +66,53 @@
   </div>
     <!-- Full-page backdrop -->
     <div class="backdrop">
-      <!-- Navigation bar -->
-      <nav class="navbar">
+      <!-- Sleek navigation ribbon -->
+      <nav class="navbar ribbon">
         <ul>
-          <li><a href="#about" class="active">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" class="active" data-tab="home">Home</a></li>
+          <li><a href="#" data-tab="projects">Projects</a></li>
+          <li><a href="#" data-tab="contact">Contact</a></li>
         </ul>
       </nav>
-      <!-- Main container for About Me -->
+      <!-- Main container for tab content -->
       <div class="container">
-        <header>
-          <h1>About Me</h1>
-          <p class="subtitle">Welcome to my personal tech site!</p>
-        </header>
-        <main>
-          <section id="about">
-            <!-- About Me subsection: name and picture at the top -->
-            <div class="about-top">
-              <!-- Replace 'your-photo.jpg' with your actual image file in the img/ folder -->
-              <img src="img/your-photo.jpg" alt="Your Name" class="profile-pic">
-              <div class="about-name">
-                <h2>Your Name</h2>
-              </div>
+        <!-- Home/About Me Section -->
+        <section id="home-section" class="tab-section">
+          <header>
+            <h1>About Me</h1>
+            <p class="subtitle">Welcome to my personal tech site!</p>
+          </header>
+          <div class="about-top">
+            <img src="img/your-photo.jpg" alt="Your Name" class="profile-pic">
+            <div class="about-name">
+              <h2>Your Name</h2>
             </div>
-            <!-- About Me bio below -->
-            <div class="about-bio">
-              <p>
-                Hi! I'm learning web development. This site is my personal project to showcase my journey and interests in technology.
-              </p>
-            </div>
-          </section>
-        </main>
+          </div>
+          <div class="about-bio">
+            <p>
+              Hi! I'm learning web development. This site is my personal project to showcase my journey and interests in technology.
+            </p>
+          </div>
+        </section>
+        <!-- Projects Section -->
+        <section id="projects-section" class="tab-section">
+          <header>
+            <h1>Projects</h1>
+          </header>
+          <ul>
+            <li>Personal Website</li>
+            <li>Simple Calculator</li>
+            <li>Tech Blog</li>
+          </ul>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact-section" class="tab-section">
+          <header>
+            <h1>Contact Info</h1>
+          </header>
+          <p>Email: your@email.com</p>
+          <p>LinkedIn: <a href="#" style="color:#00ffe7;">Your Profile</a></p>
+        </section>
         <footer>
           <p>&copy; 2026 My Tech Site</p>
         </footer>

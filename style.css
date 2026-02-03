@@ -56,34 +56,74 @@ body {
 	transition: background 0.5s;
 }
 
-/* Navigation bar styles */
+
+/* Sleek navigation ribbon styles */
+.ribbon {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	background: linear-gradient(90deg, #23263a 70%, #00ffe7 100%);
+	box-shadow: 0 4px 24px rgba(0,0,0,0.7);
+	z-index: 100;
+	border-bottom: 2px solid #00bfff;
+}
 .navbar {
 	width: 100%;
-	background: #22232b;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-	border-bottom: 1px solid #2a2d3e;
+	padding: 0;
 }
 .navbar ul {
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 0 0 0 0;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	height: 64px;
 }
 .navbar li {
-	margin: 0 24px;
+	margin: 0 32px;
 }
 .navbar a {
 	color: #00ffe7;
 	text-decoration: none;
-	font-size: 1.1em;
-	padding: 16px 0;
+	font-size: 1.2em;
+	padding: 12px 0;
 	display: inline-block;
-	transition: color 0.3s;
+	border-radius: 4px 4px 0 0;
+	transition: color 0.3s, background 0.3s;
+	position: relative;
 }
-.navbar a:hover, .navbar a.active {
+.navbar a.active {
+	color: #181a20;
+	background: #00ffe7;
+	font-weight: bold;
+	box-shadow: 0 2px 8px rgba(0,255,231,0.2);
+}
+.navbar a:hover {
 	color: #00bfff;
-	border-bottom: 2px solid #00bfff;
+	background: #23263a;
+}
+
+/* Space for fixed nav bar */
+.container {
+	margin-top: 80px;
+}
+
+/* Tab section animation styles */
+.tab-section {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.tab-section.visible {
+	display: block;
+	opacity: 1;
+	animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 
 /* Center the main container and add padding */
