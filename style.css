@@ -107,7 +107,7 @@ body {
 
 /* Space for fixed nav bar and improved readability */
 .container {
-	margin-top: 120px; /* Increased from 80px to 120px for more space */
+	margin-top: 160px; /* Increased from 120px to 160px for even more space */
 }
 
 /* Tab section animation styles */
