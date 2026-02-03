@@ -107,7 +107,7 @@ body {
 
 /* Space for fixed nav bar and improved readability */
 .container {
-	margin-top: 220px; /* Increased from 120px to 160px for even more space */
+	margin-top: 120px; /* Increased from 120px to 160px for even more space */
 }
 
 /* Tab section animation styles */
@@ -129,7 +129,7 @@ body {
 /* Center the main container and add padding */
 .container {
 	max-width: 800px;
-	margin: 40px auto;
+	margin: 100px auto;
 	background: #22232b;
 	border-radius: 12px;
 	box-shadow: 0 4px 24px rgba(0,0,0,0.7);
